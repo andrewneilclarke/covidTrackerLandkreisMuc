@@ -4,3 +4,10 @@ body {
     background: linear-gradient(to top, #8cda9f, #e68da5);
 
 }
+
+span {
+    font-size: larger;
+}
+.weekly-incidence {
+    font-size:xx-large;
+}
