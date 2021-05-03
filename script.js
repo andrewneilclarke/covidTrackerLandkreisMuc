@@ -34,9 +34,10 @@ const weeklyIncidence = document.querySelector('.weekly-incidence');
 //     console.log(response);
 //     apiText.innerText = response;
 // })
-const prevValues = [135.0, 124.1, 128.4, 123.5, 122.4, 122.4, 150.1, 174.3, 176.9, 180.6, 172.3].reverse();
+let prevValues = [129, 135, 132.4, 135.0, 124.1, 128.4, 123.5, 122.4, 122.4, 150.1, 174.3, 176.9, 180.6, 172.3].reverse();
+newValues = prevValues.concat([]);
 const prevDates = ['19-04-2021', '20-04-2021', '21-04-2021', '22-04-2021', '23-04-2021', '25-04-2021', '26-04-2021', '27-04-2021', 
-'28-04-2021', '29-04-2021', '30-04-2021'];
+'28-04-2021', '29-04-2021', '30-04-2021', '01-05-2021', '02-05-2021', '03-05-2021'];
 prevDates2 = prevDates.map((d) => {
     return d.replaceAll('-', '.');
 });
@@ -58,7 +59,7 @@ console.log(CHART);
 let line_Chart = new Chart(CHART, {
     type: 'line',
     data:  {
-        labels: prevDates,
+        labels: prevDates2,
         datasets: [{
             label: 'Total',
             data: prevValues,
