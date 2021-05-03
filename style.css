@@ -1,7 +1,6 @@
 body {
     font-family: 'Courier New', Courier, monospace;
     font-size: larger;
-    color: rgb(66, 58, 205);
+    background: linear-gradient(to top, #8cda9f, #e68da5);
 
 }
-background: linear-gradient(to top, #abd3fc, #c8f2ff);
