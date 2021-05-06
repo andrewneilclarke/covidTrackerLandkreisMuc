@@ -41,6 +41,7 @@ fetch('https://api.corona-zahlen.org/districts')
       '21-04-2021',
       '22-04-2021',
       '23-04-2021',
+      '24-04-2021',
       '25-04-2021',
       '26-04-2021',
       '27-04-2021',
@@ -57,9 +58,6 @@ fetch('https://api.corona-zahlen.org/districts')
     prevDates2 = prevDates.map((d) => {
       return d.replaceAll('-', '.');
     });
-
-    //console.log(newValues);
-    // console.log(sevenDayIncidence);
 
     if (prevValues[prevValues.length - 1] != apiCurrentValue) {
       prevValues.push(apiCurrentValue);
