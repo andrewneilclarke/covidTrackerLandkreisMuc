@@ -14,25 +14,7 @@ fetch('https://api.corona-zahlen.org/districts')
     // console.log(apiCurrentValue);
     weeklyIncidence.innerText = sevenDayIncidence;
     county.innerText = countyName;
-    let prevValues = [
-      93,
-      104,
-      117,
-      129,
-      135,
-      132.4,
-      135.0,
-      124.1,
-      128.4,
-      123.5,
-      122.4,
-      122.4,
-      150.1,
-      174.3,
-      176.9,
-      180.6,
-      172.3,
-    ].reverse();
+    let prevValues = [93, 104, 117, 129, 135, 132.4, 135.0, 124.1, 128.4, 123.5, 122.4, 122.4, 150.1, 174.3, 176.9, 180.6, 172.3].reverse();
     //let newValues = prevValues.concat(apiValues);
     let newValues = [...prevValues, apiCurrentValue];
     const prevDates = [
@@ -61,9 +43,7 @@ fetch('https://api.corona-zahlen.org/districts')
 
     if (prevValues[prevValues.length - 1] != apiCurrentValue) {
       prevValues.push(apiCurrentValue);
-      let todaysDate = new Date()
-        .toLocaleDateString('en-GB')
-        .replaceAll('/', '.');
+      let todaysDate = new Date().toLocaleDateString('en-GB').replaceAll('/', '.');
       prevDates2.push(todaysDate);
       //console.log(prevValues, prevDates2);
       localStorage.setItem(prevValues, prevDates2);
@@ -103,7 +83,17 @@ fetch('https://api.corona-zahlen.org/districts')
       options: {
         scales: {
           y: {
-            beginAtZero: true,
+            beginAtZero: false,
+          },
+          x: {
+            ticks: {
+              // For a category axis, the val is the index so the lookup via getLabelForValue is needed
+              callback: function (val, index) {
+                // Hide the label of every 2nd dataset
+                return index % 2 === 0 ? this.getLabelForValue(val) : '';
+              },
+              color: 'dark grey',
+            },
           },
         },
       },
