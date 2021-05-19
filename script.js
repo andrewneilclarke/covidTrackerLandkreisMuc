@@ -14,7 +14,9 @@ fetch('https://api.corona-zahlen.org/districts')
     // console.log(apiCurrentValue);
     weeklyIncidence.innerText = sevenDayIncidence;
     county.innerText = countyName;
-    let prevValues = [76, 78, 87, 93, 104, 117, 129, 135, 132.4, 135.0, 124.1, 128.4, 123.5, 122.4, 122.4, 150.1, 174.3, 176.9, 180.6, 172.3].reverse();
+    let prevValues = [
+      53, 58, 69, 76, 78, 87, 93, 104, 117, 129, 135, 132.4, 135.0, 124.1, 128.4, 123.5, 122.4, 122.4, 150.1, 174.3, 176.9, 180.6, 172.3,
+    ].reverse();
     //let newValues = prevValues.concat(apiValues);
     let newValues = [...prevValues, apiCurrentValue];
     const prevDates = [
@@ -38,7 +40,10 @@ fetch('https://api.corona-zahlen.org/districts')
       '06-05-2021',
       '07-05-2021',
       '08-05-2021',
-
+      '09-05-2021',
+      '10-05-2021',
+      '11-05-2021',
+      '12-05-2021',
     ];
     prevDates2 = prevDates.map((d) => {
       return d.replaceAll('-', '.');
